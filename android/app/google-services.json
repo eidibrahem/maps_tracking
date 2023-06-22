@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "51684802023",
+    "project_id": "tracking-maps-adf35",
+    "storage_bucket": "tracking-maps-adf35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51684802023:android:f7694124a8950f1ef35142",
+        "android_client_info": {
+          "package_name": "com.example.testo_maps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51684802023-60d2jq64lcqvibrt9sms72jjbj3ima3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.testo_maps",
+            "certificate_hash": "307e917493d2ffebcac957750cfc24821ba5006d"
+          }
+        },
+        {
+          "client_id": "51684802023-3vn9hg7pn2oge3ldpianu37sj8sq5s85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX6e5wpWofmC_AIWTI-8bAl1kln9bDv6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51684802023-3vn9hg7pn2oge3ldpianu37sj8sq5s85.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
