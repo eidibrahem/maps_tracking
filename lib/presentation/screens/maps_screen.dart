@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
@@ -14,6 +15,7 @@ import '../../cubit_data/business_logic/cubit/maps/maps_cubit.dart';
 import '../../data/models/Place_suggestion.dart';
 import '../../data/models/place.dart';
 import '../../data/models/place_directions.dart';
+import '../../data/webservices/places_webservices.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -24,6 +26,9 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen>
  {
+  PlacesWebservices placesWebservices =PlacesWebservices();
+  late final GeoPoint? geodestinationPoint ;
+
   List<PlaceSuggestion> places = [];     // List of places from search
   static Position? position;         // My  position
   
@@ -65,11 +70,17 @@ late CameraPosition goToSearchedForPlace;  //Camera Position for Searched  Place
 
   //  #F1
   Future<void> getMyCurrentLocation() async {
-    position = await LocationHelper.getCurrentLocation(context).whenComplete(() {
+    position = await LocationHelper.getCurrentLocation().whenComplete(() {
       setState(() {
       });
     
     });
+  /* 
+  List<double>? k =[0,0];
+   await placesWebservices.getStartPlace().then((value){
+    k =value ;
+    print('55555555555555 ${value}}');
+   }); */
   }
 
    

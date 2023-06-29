@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -8,7 +11,6 @@ class PlacesWebservices {
 
   PlacesWebservices() {
     BaseOptions options = BaseOptions(
-    
       receiveDataWhenStatusError: true,
     );
     dio = Dio(options);
@@ -66,12 +68,30 @@ class PlacesWebservices {
           'key': googleAPIKey,
         },
       );
-        print("Omar I'm testing directions");
+      print("Omar I'm testing directions");
       print(response.data);
       return response.data;
     } catch (error) {
       return Future.error("Place location error : ",
           StackTrace.fromString(('this is its trace')));
     }
+  }
+
+  Future<List<double>?> getDestinationPlace() async {
+  await   FirebaseFirestore.instance
+        .collection('locations')
+        .doc('123456')
+        .get()
+        .then((value) {
+    
+      print('geoooooooooo   ${value.data()?['latitude']}');
+         return  [value.data()?['latitude'] , value.data()?['longitude']];
+ 
+    }).catchError((error) {
+      print('geoooooooooo ');
+      return [0,0];
+    });
+ 
+   
   }
 }

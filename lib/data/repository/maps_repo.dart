@@ -34,4 +34,8 @@ class MapsRepository {
 
     return PlaceDirections.fromJson(directions);
   }
+  Future<List<double>?>  getDestinationPlace ()async{
+  return await placesWebservices.getDestinationPlace();
+  
+  }
 }

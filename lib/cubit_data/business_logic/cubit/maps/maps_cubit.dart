@@ -14,6 +14,16 @@ class MapsCubit extends Cubit<MapsState> {
   final MapsRepository mapsRepository;
  
  Position? position ;
+/*  Marker currentLocationMarker = Marker(
+      position: LatLng(position!.latitude, position!.longitude),
+      markerId: MarkerId('2'),
+      onTap: () {},
+      infoWindow: InfoWindow(title: "Your current Location"),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+
+    );
+  Marker? deriverLocationMarker ;  
+ GeoPoint geodestinationPoint =GeoPoint(0,0) ;  */// for destination 
   MapsCubit(this.mapsRepository) : super(MapsInitial());
 
   void emitPlaceSuggestions(String place, String sessionToken) {
